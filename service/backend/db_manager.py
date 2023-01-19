@@ -135,6 +135,4 @@ def get_all_users():
 
 
 if __name__ == "__main__":
-    #create_tables()
-    #create_user("Egor", "Zakharov", "pigadoor", "123456", "pigadoor@gmail.com")
-    get_all_users()
+    create_tables()
