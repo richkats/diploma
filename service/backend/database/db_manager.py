@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from credentials import *
+from .credentials import *
 
 from contextvars import ContextVar
-
 import peewee as pw
 from playhouse.cockroachdb import CockroachDatabase, ArrayField
 
@@ -23,6 +22,7 @@ class PeeweeConnectionState(pw._ConnectionState):
 
     def __getattr__(self, name):
         return self._state.get()[name]
+
 
 db._state = PeeweeConnectionState()
 
